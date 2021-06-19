@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/filmsFragment">
+
+    <fragment
+        android:id="@+id/filmsFragment"
+        android:name="br.com.fortestecnologia.infinitySagaMarvel.ui.films.FilmsFragment"
+        android:label="Infinity Saga Marvel"
+        tools:layout="@layout/films_fragment">
+        <action
+            android:id="@+id/action_filmsFragment_to_filmDetailFragment"
+            app:destination="@id/filmDetailFragment"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/filmDetailFragment"
+        android:name="br.com.fortestecnologia.infinitySagaMarvel.ui.filmDetail.FilmDetailFragment"
+        android:label="Detalhes"
+        tools:layout="@layout/film_detail_fragment"/>
+</navigation>
