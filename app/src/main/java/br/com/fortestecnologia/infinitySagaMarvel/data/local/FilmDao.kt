@@ -3,6 +3,7 @@ package br.com.fortestecnologia.infinitySagaMarvel.data.local
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import br.com.fortestecnologia.infinitySagaMarvel.data.entities.FilmEntity
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface FilmDao {
@@ -28,5 +29,10 @@ interface FilmDao {
     @Query("SELECT * FROM film WHERE id = :id")
     fun get(id: Int): LiveData<FilmEntity>
 
+    @Query("SELECT * FROM film WHERE title LIKE :searchQuery OR year LIKE :searchQuery ORDER BY title")
+    fun search(searchQuery: String): Flow<List<FilmEntity>>
+
+    @Query("SELECT * FROM film ORDER BY rated ASC")
+    fun read(): Flow<List<FilmEntity>>
 
 }

@@ -2,6 +2,7 @@ package br.com.fortestecnologia.infinitySagaMarvel.data.remote
 
 import br.com.fortestecnologia.infinitySagaMarvel.data.entities.FilmEntity
 import br.com.fortestecnologia.infinitySagaMarvel.data.entities.FilmList
+import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

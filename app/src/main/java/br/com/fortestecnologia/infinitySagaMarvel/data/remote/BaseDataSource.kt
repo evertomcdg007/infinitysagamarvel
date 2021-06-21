@@ -2,6 +2,7 @@ package br.com.fortestecnologia.infinitySagaMarvel.data.remote
 
 import android.util.Log
 import br.com.fortestecnologia.infinitySagaMarvel.utils.Resource
+import retrofit2.Call
 import retrofit2.Response
 import timber.log.Timber
 

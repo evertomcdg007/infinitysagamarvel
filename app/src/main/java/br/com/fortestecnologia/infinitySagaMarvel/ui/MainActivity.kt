@@ -2,12 +2,15 @@ package br.com.fortestecnologia.infinitySagaMarvel.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import androidx.appcompat.widget.SearchView
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import br.com.fortestecnologia.infinitySagaMarvel.R
 import br.com.fortestecnologia.infinitySagaMarvel.databinding.ActivityMainBinding
+import br.com.fortestecnologia.infinitySagaMarvel.ui.films.FilmsFragment
 import dagger.hilt.EntryPoint
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -24,5 +27,10 @@ class MainActivity : AppCompatActivity() {
 
         val appBarConfiguration: AppBarConfiguration = AppBarConfiguration(navController.graph)
         binding.toolbar.setupWithNavController(navController, appBarConfiguration)
+
     }
+
+
+
+
 }

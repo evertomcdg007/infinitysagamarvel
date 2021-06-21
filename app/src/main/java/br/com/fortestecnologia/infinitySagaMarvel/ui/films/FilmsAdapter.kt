@@ -33,6 +33,7 @@ class FilmsAdapter(private val listener: FilmItemListener) : RecyclerView.Adapte
     override fun getItemCount(): Int = items.size
 
     override fun onBindViewHolder(holder: FilmViewHolder, position: Int) = holder.bind(items[position])
+
 }
 
 class FilmViewHolder(private val itemBinding: ItemFilmBinding, private val listener: FilmsAdapter.FilmItemListener) : RecyclerView.ViewHolder(itemBinding.root),
@@ -47,8 +48,8 @@ class FilmViewHolder(private val itemBinding: ItemFilmBinding, private val liste
     @SuppressLint("SetTextI18n")
     fun bind(item: FilmEntity) {
         this.film = item
-        itemBinding.title.text = item.title
-        itemBinding.year.text = """${item.year} - ${item.director}"""
+        itemBinding.title.text = """${item.title} - ${item.released}"""
+        itemBinding.year.text = item.genre
         Glide.with(itemBinding.root)
             .load(item.poster)
             .transform(CircleCrop())
@@ -58,5 +59,7 @@ class FilmViewHolder(private val itemBinding: ItemFilmBinding, private val liste
     override fun onClick(v: View?) {
         listener.onClickedFilm(film.id)
     }
+
+
 }
 
